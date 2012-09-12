@@ -1,0 +1,147 @@
+﻿@model IEnumerable<eBaySearch.Finding.SearchItem>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            itemId
+        </th>
+        <th>
+            title
+        </th>
+        <th>
+            globalId
+        </th>
+        <th>
+            subtitle
+        </th>
+        <th>
+            isMultiVariationListing
+        </th>
+        <th>
+            isMultiVariationListingSpecified
+        </th>
+        <th>
+            galleryURL
+        </th>
+        <th>
+            pictureURLSuperSize
+        </th>
+        <th>
+            pictureURLLarge
+        </th>
+        <th>
+            viewItemURL
+        </th>
+        <th>
+            charityId
+        </th>
+        <th>
+            autoPay
+        </th>
+        <th>
+            autoPaySpecified
+        </th>
+        <th>
+            postalCode
+        </th>
+        <th>
+            location
+        </th>
+        <th>
+            country
+        </th>
+        <th>
+            returnsAccepted
+        </th>
+        <th>
+            returnsAcceptedSpecified
+        </th>
+        <th>
+            compatibility
+        </th>
+        <th>
+            delimiter
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.globalId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isMultiVariationListing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isMultiVariationListingSpecified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.galleryURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pictureURLSuperSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pictureURLLarge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.viewItemURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.charityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autoPay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autoPaySpecified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.returnsAccepted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.returnsAcceptedSpecified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.compatibility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.delimiter)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

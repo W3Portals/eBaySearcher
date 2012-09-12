@@ -1,0 +1,185 @@
+﻿@model eBaySearch.Finding.SearchItem
+
+@{
+    ViewBag.Title = "ViewPage1";
+}
+
+<h2>ViewPage1</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SearchItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.itemId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.itemId)
+            @Html.ValidationMessageFor(model => model.itemId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.title)
+            @Html.ValidationMessageFor(model => model.title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.globalId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.globalId)
+            @Html.ValidationMessageFor(model => model.globalId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.subtitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subtitle)
+            @Html.ValidationMessageFor(model => model.subtitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isMultiVariationListing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isMultiVariationListing)
+            @Html.ValidationMessageFor(model => model.isMultiVariationListing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isMultiVariationListingSpecified)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isMultiVariationListingSpecified)
+            @Html.ValidationMessageFor(model => model.isMultiVariationListingSpecified)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.galleryURL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.galleryURL)
+            @Html.ValidationMessageFor(model => model.galleryURL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pictureURLSuperSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pictureURLSuperSize)
+            @Html.ValidationMessageFor(model => model.pictureURLSuperSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pictureURLLarge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pictureURLLarge)
+            @Html.ValidationMessageFor(model => model.pictureURLLarge)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.viewItemURL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.viewItemURL)
+            @Html.ValidationMessageFor(model => model.viewItemURL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.charityId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.charityId)
+            @Html.ValidationMessageFor(model => model.charityId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.autoPay)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.autoPay)
+            @Html.ValidationMessageFor(model => model.autoPay)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.autoPaySpecified)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.autoPaySpecified)
+            @Html.ValidationMessageFor(model => model.autoPaySpecified)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.postalCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.postalCode)
+            @Html.ValidationMessageFor(model => model.postalCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.location)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.location)
+            @Html.ValidationMessageFor(model => model.location)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.country)
+            @Html.ValidationMessageFor(model => model.country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.returnsAccepted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.returnsAccepted)
+            @Html.ValidationMessageFor(model => model.returnsAccepted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.returnsAcceptedSpecified)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.returnsAcceptedSpecified)
+            @Html.ValidationMessageFor(model => model.returnsAcceptedSpecified)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.compatibility)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.compatibility)
+            @Html.ValidationMessageFor(model => model.compatibility)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.delimiter)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.delimiter)
+            @Html.ValidationMessageFor(model => model.delimiter)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

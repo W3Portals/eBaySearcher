@@ -1,0 +1,43 @@
+﻿@model  IEnumerable<eBaySearch.Finding.SearchItem>
+
+@{
+    ViewBag.Title = "Seller Items";
+}
+
+<h2>Seller: <a href="http://myworld.ebay.com/@ViewBag.Seller" target="_blank"> @ViewBag.Seller</a></h2>
+<h4>Location: @ViewBag.location</h4>
+<p>
+    @ViewBag.resultcount of @ViewBag.totalitems items
+</p>
+<table>
+    <tr>
+        <td>Item title </td>
+        <td>Category</td>
+        <td>Listed</td>
+        <td>Price</td>
+    </tr>
+
+   @foreach (var item in Model)
+          {
+         <tr>
+     
+           @* <td class="itemimg" style="display: none">
+                <img alt="no image" height="90" src="@item.galleryURL" />
+            </td>*@
+            <td>
+               <a href="@item.viewItemURL" target="_blank">@item.title </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.primaryCategory.categoryName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.listingInfo.startTime)
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.sellingStatus.currentPrice.Value)
+            </td>
+           
+            </tr>
+         }
+ </table>

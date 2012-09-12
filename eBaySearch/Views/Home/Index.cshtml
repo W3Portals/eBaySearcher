@@ -1,0 +1,68 @@
+﻿@model IEnumerable<eBaySearch.Finding.SearchItem>
+@{
+    ViewBag.Title = "Search eBay";
+}
+<h2 style="text-align:center">
+     eBay Search
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <input id="Id" name="Id" type="text" maxlength="150" value="@ViewBag.Message" style=" width:350px; " /><text> Zip:</text> 
+        <input id="zip" name="zip" type="text" maxlength="30" value="@ViewBag.Zip" style=" width:100px; " /> <br />
+        <input id="Button1" type="submit" value="Keyword Search" /><a href="#" onclick="$('#Id').val('')" > Clear</a>
+    }
+</h2>
+
+@if (Model != null)
+{
+    <text>
+<p>
+    @ViewBag.resultcount of @ViewBag.totalitems items from eBay within 50 mi of '@ViewBag.Zip'
+</p>
+<table>
+    <tr>
+        <td>Seller </td>
+        <td>Item title (item#) </td>
+        <td>Category</td>
+        <td>Location</td>
+       
+        <td>Listed</td>
+        <td>Price</td>
+    </tr>
+
+        @foreach (var seller in Model.GroupBy(i=>i.sellerInfo.sellerUserName).OrderByDescending(i=>i.Count()))
+        {
+        <tr style=" background-color:#eee">
+        <td colspan="6"> @Html.ActionLink(@seller.Key, "SellerItems", new { Id = @seller.Key }) - (@seller.Count() listings) </td>
+        </tr>
+          
+          foreach (var item in Model.Where(i=>i.sellerInfo.sellerUserName==@seller.Key).Take(4))
+          {
+         <tr>
+          <td> </td>
+           @* <td class="itemimg" style="display: none">
+                <img alt="no image" height="90" src="@item.galleryURL" />
+            </td>*@
+            <td>
+               <a href="@item.viewItemURL" target="_blank">@item.title </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.primaryCategory.categoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.listingInfo.startTime)
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.sellingStatus.currentPrice.Value)
+            </td>
+           
+            </tr>
+         }
+
+        }
+</table>
+
+  </text>
+ }
